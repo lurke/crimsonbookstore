@@ -1,0 +1,803 @@
+/****************************************************************************
+ * styles.css
+ *
+ * Crimson Bookstore
+ * Lauren Urke and Sergeui Balanovich
+ *
+ * Global CSS.
+ ***************************************************************************/
+@import "mixins";
+
+head {
+  margin: 0px;
+}
+
+body{
+  margin: 0px;
+  background-image: url("../img/wood4.png");
+
+  overflow:auto;
+}
+
+.navbar{
+  display: block;
+  margin-bottom: 0px;
+  overflow: visible;
+  @include border-radius(0px);
+  .brand {
+    text-shadow: 0px 2px 1px #222;
+    color: rgba(255, 255, 255, 0.75);
+    &:hover {
+      text-shadow: 0px -1px 2px #222;
+    }
+
+    &:active {
+      text-shadow: 0px -1px 2px #222;
+    }
+  }
+  .navbar-inner {
+    background: -webkit-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
+    background: -moz-linear-gradient(top center, #7d0000, #500000);
+    @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+    .nav {
+      li{
+        a{
+          text-shadow: 0px 2px 1px #222;
+          color: rgba(255, 255, 255, 0.75);
+          &:hover {
+            text-shadow: 0px -1px 2px #222;
+          }
+
+          &:active {
+            text-shadow: 1px -1px 2px #222;
+          }
+        }
+        a.lin{
+          color: rgba(71, 64, 64, 0.75);
+        }
+      }
+      li.dropdown.open {
+          .dropdown-toggle {
+            background-color: rgba(255, 255, 255, 0);
+            text-shadow: 0px -2px 0px #222;
+            color: rgba(255, 255, 255, 0.75);
+
+          }
+      }
+      ul{
+        background-image: url("../img/lightgrey.jpg");
+        @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.34));
+        border: none;
+        li {
+          margin: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+#mainpage {
+  background-color: rgba(0,0,0, .3);
+}
+
+#bug-bar{
+  font-weight: bold;
+  width: auto;
+  text-align: center;
+  padding: 10px 0 12px 0;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+  //border: 1px solid #ccc;
+  border-bottom: 1px rgba(199, 183, 160, 0.83);
+  //background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#cccccc));
+  //background: -moz-linear-gradient(top center, #999999,#cccccc);
+  background: rgba(199, 183, 160, 0.83);
+  //text-shadow: 1px 1px 1px #cccccc;
+  @include border-radius(5px 5px 0 0);
+  @include box-shadow( 0 -1px 1px rgb(197, 189, 172));
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  z-index: 2;
+  color: rgb(116, 1, 1);
+  font-size: 28px;
+  ul{
+  list-style: none;
+  }
+}
+#feedback-bar{
+  font-weight: bold;
+  ul {
+    list-style: none;
+  }
+  width: auto;
+  text-align: center;
+  padding: 10px 0 12px 0;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+  //border: 1px solid #ccc;
+  border-bottom: 1px rgba(199, 183, 160, 0.83);
+  //background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#cccccc));
+  //background: -moz-linear-gradient(top center, #999999,#cccccc);
+  background: rgba(199, 183, 160, 0.83);
+  //text-shadow: 1px 1px 1px #cccccc;
+  @include border-radius(5px 5px 0 0);
+  @include box-shadow( 0 -1px 1px rgb(197, 189, 172));
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  z-index: 2;
+  color: rgb(116, 1, 1);
+  font-size: 28px;
+}
+
+/* pill bar*/
+#pill-bar {
+  font-weight: bold;
+  width: auto;
+  #buy {
+    margin-left: 2%;
+    width: 48%;
+  }
+  #sell {
+    margin-right: 2%;
+    width: 48%;
+  }
+  ul {
+    padding: 0;
+    margin: 0 0 0px 0px;
+  }
+  ul li {
+    display: inline-block;
+  }
+  ul li a {
+    display: block;
+    text-align: center;
+  }
+  .inactive a {
+    color: rgb(71, 47, 31);
+    text-shadow: 0 1px 1px rgba(211, 201, 185, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 221, 199, 0.75)), to(rgba(211, 192, 173, 0.89)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgba(236, 221, 199, 0.75)), to(rgba(211, 192, 173, 0.89)));
+    @include border-radius(5px 5px 0 0);
+    @include box-shadow(inset 0 0 1px white);
+    padding: 5px 0 9px 0;    
+    -webkit-box-shadow: inset 0 0 1px white;
+    -moz-box-shadow: inset 0 0 1px white;
+    border: 1px solid rgb(111, 103, 95);
+    z-index: 1;
+    font-size: 22px;
+    &:hover {
+      background: -webkit-gradient(linear, left bottom, left top, from(rgba(236, 221, 199, 0.75)), to(rgba(211, 192, 173, 0.89)));
+      background: -moz-linear-gradient(top center, rgba(236, 221, 199, 0.75), rgba(211, 192, 173, 0.89));
+      text-decoration: none;
+      @include box-shadow (0 1px 1px rgba(0, 0, 0, .1), inset 0 0 1px white);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .active a{
+    padding: 10px 0 12px 0;
+    text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+    //border: 1px solid #ccc;
+    border-bottom: 1px rgba(199, 183, 160, 0.83);
+    //background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#cccccc));
+    //background: -moz-linear-gradient(top center, #999999,#cccccc);
+    background: rgba(199, 183, 160, 0.83);
+    //text-shadow: 1px 1px 1px #cccccc;
+    @include border-radius(5px 5px 0 0);
+    @include box-shadow( 0 -1px 1px rgb(197, 189, 172));
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    z-index: 2;
+    color: rgb(116, 1, 1);
+    font-size: 28px;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#centercontent{
+  overflow:auto; 
+  padding-top: 30px;     
+  padding-left:30px;      
+  padding-right:30px;     
+  padding-bottom:30px;     
+}
+
+#buy_centercontent
+{
+  background-image: url(../img/white_carbonfiber.png);
+  opacity:0.95;
+  filter:alpha(opacity=92); /* For IE8 and earlier */
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow:auto;
+  padding-top:45px;
+  padding-left:45px; 
+  padding-right:30px;
+  padding-bottom:30px;
+  @include box-shadow(0 3px 12px rgba(0, 0, 0, 0.7), inset 0 1px rgba(255, 255, 255, 0.34));
+}
+#buy_centercontent:hover
+{
+    opacity:0.97;
+    filter:alpha(opacity=95); /* For IE8 and earlier */
+}
+.reportbug{
+  margin-left: 37%;
+  width: 60%;
+}
+.feedback{
+  margin-left: 37%;
+  width: 60%;
+}
+#bug-content{
+  line-height: 20px;   
+  background: rgba(199, 183, 160, 0.83); 
+  overflow:auto; 
+  border-radius: 0px 0px 5px 5px;
+  padding-left:30px; 
+  padding-right:30px;
+  padding-bottom:30px;
+  padding-top: 30px;
+  min-height: 430px;
+  @include box-shadow( 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34));  
+  input {
+    width: 20%
+  }
+  label {
+    //display: inline-block;
+    font-style: italic;
+  }
+  textarea {
+    width: 42%;
+  }
+  .bugr{
+    margin-left: 18%;
+  }
+}
+
+#feedback-content{
+  line-height: 20px;   
+  background: rgba(199, 183, 160, 0.83); 
+  overflow:auto; 
+  border-radius: 0px 0px 5px 5px;
+  padding-left:30px; 
+  padding-right:30px;
+  padding-bottom:30px;
+  padding-top: 30px;
+  min-height: 430px;
+  @include box-shadow( 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34));  
+  textarea {
+    width: 42%;
+  }
+  input {
+    width: 20%
+  }
+  label {
+    //display: inline-block;
+    font-style: italic;
+  }
+  .fdbk{
+    margin-left: 18%;
+  }
+}
+.btnreturns{
+  width: 22%;
+  margin-left: 40%;
+}
+.returnsell{
+  //margin-left: 29%
+}
+.returnlink{
+  display: inline-block;
+  height: 45px;
+  width: 100%;
+  font-size: 20px;
+  text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+  color: rgb(252, 234, 234);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+  background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+  background-color: rgb(80, 0, 0);
+  &:hover{
+     background-color: #500000;
+     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+     @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    color: rgb(252, 234, 234);
+  }
+}
+ /* Style of pill Content */
+#pill-content {
+  line-height: 20px;
+  margin-left: 2%;
+  margin-right: 2%;   
+  background: rgba(199, 183, 160, 0.83); 
+  overflow:auto; 
+  border-radius: 0px 0px 5px 5px;
+  padding-left:30px; 
+  padding-right:30px;
+  padding-bottom:30px;
+  padding-top: 30px;
+  min-height: 430px;
+  @include box-shadow( 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34));  
+  #sellsearchbar{
+    margin-top: 20px;
+    #booksearchinput{
+      margin-bottom: 0px;
+      font-size: 16px;
+      width: 440px;      
+    }
+    input{
+      border-color: rgb(184, 183, 178);
+      &:focus{
+        border-color: rgba(125, 0, 0, 0.58);
+        @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+      }
+    }
+  }
+  #message{
+    background-color: rgba(248, 244, 240, 0.28);
+    overflow:auto; 
+    padding:5px;
+    @include box-shadow(-1px 1px 1px rgba(0, 0, 0, 0.4), inset -1px 1px 2px rgba(199, 195, 189, 0.4));
+    margin-top: 20px;
+    border: rgb(172, 158, 130);
+  }
+  #big{
+    #common{
+      font-size:28px;
+      color: #740101;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    .sellresult{
+      background-color: rgba(150, 127, 102, 0.28);
+      margin: 10px 0 10px 0px;
+      //cursor: pointer;
+      @include box-shadow(inset 0px 1px 3px rgba(0, 0, 0, .8));
+      border: rgb(172, 158, 130);
+      //&:hover{
+        //@include box-shadow(inset 0px 1px 5px rgba(0, 0, 0, .8));
+        //border: rgb(172, 158, 130);
+      // }
+    }
+
+    .sellbook{
+      display: inline-block;
+      //margin-left: 2%;
+      width: 49%;
+      img{
+        display: inline-block;
+        width: 75px;
+        vertical-align: top;
+      }
+      ol {
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        list-style-type: none;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 0 0 10px;
+        width: 80%;
+        li{
+          font-family: "Helvetica Neue", "Helvetica", "Arial", Sans-Serif;
+          overflow: hidden;
+           text-overflow: ellipsis;
+           display: -webkit-box;
+           -webkit-line-clamp: 3;
+           -webkit-box-orient: vertical;
+        }
+        #stitle {
+          font-size: 16px;
+          line-height: 20px;
+        }
+        #sauthors{
+          font-size:12;
+          line-height: 20px;
+        }
+        #spublisher{
+          font-size: 11px;
+          line-height: 15px;
+        }
+        #sdescription{
+          font-size: 11px;
+          line-height: 15px;
+        }
+      }
+    }
+
+    .sellform{
+        vertical-align: top;
+        display: inline-block;
+        //margin-right: 2%;
+        width: 49%;
+        .sellformentrance{
+          margin-left: 50%;
+          margin-top: 6%;
+          height: 50px;
+          width: 100px;
+          text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+          color: rgb(252, 234, 234);
+          background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+          background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+          background-color: rgb(80, 0, 0);
+          &:hover{
+             background-color: #500000;
+             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+             @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+          }
+        }
+        .actualform{
+          margin: 0 0 0px 0;
+          #scourse{
+            width: 200px;
+            margin-bottom: 0px;
+          }
+          #smandatory{
+            margin-left: 10px;
+            vertical-align: top;
+            margin-top: 8px;
+          }
+          label {
+            display: inline-block;
+            margin-left: 7px;
+            vertical-align: top;
+            margin-top: 5px;
+          }
+          #sprice{
+            width: 200px;
+            display: inline-block;
+            margin-top:10px;
+            margin-bottom: 1px;
+          }
+          input{
+            background-color: rgb(228, 218, 202);
+            &:focus{
+              border-color: rgba(125, 0, 0, 0.58);
+              @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+            }
+          }
+          #sbookcondition{
+            margin-left: 10px;
+          }
+          .selectstyle{
+            overflow: hidden;
+            height: 30px;
+            display: inline-block;
+            select{
+              height: 30px;
+              //-webkit-appearance: none;
+              vertical-align: top;
+              padding-top: 0;
+              background-color: rgb(228, 218, 202);
+              &:focus{
+                outline: none;
+               // border-color: rgba(125, 0, 0, 0.58);
+               // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(125, 0, 0, 0.68));
+              }
+            }
+          }
+          textarea {
+            height: 40px;
+            width: 350px;
+            margin-bottom: 10px;
+            margin-top: 9px;
+            background-color: rgb(228, 218, 202);
+            &:focus{
+              border-color: rgba(125, 0, 0, 0.58);
+              @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+            }
+          }
+          button{
+            margin-left: 10px;
+            margin-bottom: 10px;
+            margin-top: 9px;
+            height: 50px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+            background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+            background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+            background-color: rgb(80, 0, 0);
+            color: rgb(252, 234, 234);
+            &:hover{
+              background-color: #500000;
+              text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+              @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+            }
+          }
+        }
+    }
+  }
+    
+
+}
+
+
+.coursepack{
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+  .cpbutton{
+    margin-left: 15%;
+    margin-top: 9px;    
+    height: 45px;
+    width: 90%;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+    color: rgb(252, 234, 234);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    &:hover{
+       background-color: #500000;
+       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+       @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+.cpform{
+  margin: 10px 5% 0px 5%;
+  background-color: rgba(150, 127, 102, 0.28);
+  border: #ac9e82;
+  @include box-shadow (inset 0px 1px 3px rgba(0, 0, 0, 0.8));
+  .cplabel{
+    font-size: 20px;
+    margin-left: 0%;
+    color: #740101;
+    margin-bottom: 5px;
+  }
+  #scourse{
+    width: 200px;
+    margin-bottom: 0px;
+  }
+  #smandatory{
+    margin-left: 10px;
+    vertical-align: top;
+    margin-top: 8px;
+  }
+  label {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+    margin-top: 5px;
+  }
+  #sprice{
+    width: 200px;
+    display: inline-block;
+    margin-top:10px;
+    margin-bottom: 1px;
+  }
+  input{
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  #sbookcondition{
+    margin-left: 10px;
+  }
+  .selectstyle{
+    overflow: hidden;
+    height: 30px;
+    display: inline-block;
+    select{
+      height: 30px;
+      //-webkit-appearance: none;
+      vertical-align: top;
+      padding-top: 0;
+      background-color: rgb(228, 218, 202);
+      &:focus{
+        outline: none;
+       // border-color: rgba(125, 0, 0, 0.58);
+       // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(125, 0, 0, 0.68));
+      }
+    }
+  }
+  textarea {
+    height: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 8 px;
+    height: 50px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    color: rgb(252, 234, 234);
+    &:hover{
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+
+
+.notfound{
+  display: inline-block;
+  width: 24%;
+  .nfbutton{
+    margin-left: 15%;
+    margin-top: 8px;    
+    height: 45px;
+    width: 90%;
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
+    color: rgb(252, 234, 234);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    &:hover{
+       background-color: #500000;
+       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+       @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+.nfform{
+  margin: 10px 5% 0px 5%;
+  background-color: rgba(150, 127, 102, 0.28);
+  border: #ac9e82;
+  @include box-shadow (inset 0px 1px 3px rgba(0, 0, 0, 0.8));
+  .nflabel{
+    font-size: 20px;
+    margin-left: 0%;
+    margin-bottom: 5px;
+    color: #740101;
+  }
+  #scourse{
+    width: 200px;
+    margin-bottom: 0px;
+  }
+  #smandatory{
+    margin-left: 10px;
+    vertical-align: top;
+    margin-top: 8px;
+  }
+  label {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: top;
+    margin-top: 5px;
+  }
+  #sprice{
+    width: 200px;
+    display: inline-block;
+    margin-top:10px;
+    margin-bottom: 1px;
+  }
+  input{
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  #sbookcondition{
+    margin-left: 10px;
+  }
+  .selectstyle{
+    overflow: hidden;
+    height: 30px;
+    display: inline-block;
+    select{
+      height: 30px;
+      //-webkit-appearance: none;
+      vertical-align: top;
+      padding-top: 0;
+      background-color: rgb(228, 218, 202);
+      &:focus{
+        outline: none;
+       // border-color: rgba(125, 0, 0, 0.58);
+       // @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px rgba(125, 0, 0, 0.68));
+      }
+    }
+  }
+  textarea {
+    height: 40px;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    background-color: rgb(228, 218, 202);
+    &:focus{
+      border-color: rgba(125, 0, 0, 0.58);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68));
+    }
+  }
+  button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    height: 50px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
+    background-color: rgb(80, 0, 0);
+    color: rgb(252, 234, 234);
+    &:hover{
+      background-color: #500000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 1px 3px rgba(0, 0, 0, 0.5));
+    }
+  }
+}
+
+#bottom {
+  font-size: smaller;
+  margin: 20px;
+  margin-top: 0px;
+  margin-bottom:0px;
+  text-align: center;
+  color:#000000; 
+  padding:15px;
+}
+
+#welcomeuser
+{
+  padding:15px;
+  color:#FFFFFF;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 6px #A00000; 
+    //-webkit-border-radius: 10px;
+    //border-radius: 10px;
+    background-color: rgba(64, 34, 23, 0.93);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(111, 1, 1); 
+    //-webkit-box-shadow: inset 0 0 6px #A00000; 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #ffffff; 
+}
+
+th 
+{
+  padding: 0 0.5em;
+  text-align: center;
+  th {
+    border-left: 1px solid #CCC;
+    text-align: center;
+  }
+}
+
+tr.yellow td 
+{
+  border-top: 1px white;
+  border-bottom: 1px white;
+  background: #FFC;
+}
+
+td 
+{
+  border-bottom: 1px white;
+  padding: 0 0.5em;
+  width:100px;
+  td {
+    text-align: center;
+  }
+}
