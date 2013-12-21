@@ -32,6 +32,6 @@
         
         else
         {        
-            echo ('</tbody><h3 style = "text-align:center" >Book not found</h3></table></div>');
+            echo ('</tbody><h3 id="notfound" style = "text-align:center" >Book not found</h3></table></div>');
         }
     //}

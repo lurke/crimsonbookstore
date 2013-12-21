@@ -138,6 +138,7 @@ $(document).ready( function () {
     //if there is a change in the search bar
     $("input#booksearch").on('change', function(){
         // $('input#booksearch').autocomplete({source:'ajax/suggest_book.php', minLength:2});
+        $('#notfound').remove();
         var input = $('input#booksearch').val();
         var count = 0;
         if ($.trim(input) != '') {
