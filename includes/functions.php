@@ -20,6 +20,7 @@
         exit;
     }
 
+
     /**
      * Facilitates debugging by dumping contents of variable
      * to browser.

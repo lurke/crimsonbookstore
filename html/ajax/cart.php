@@ -4,7 +4,7 @@
         require '../db/connect.php';
         
         $list_id = $_POST['listid'];
-        $user_id = $_SESSION["id"];        
+        $user_id = $_POST["sid"];        
         
         if ($_POST['is_carted'] == 1)
         {

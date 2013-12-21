@@ -39,5 +39,13 @@
            redirect("/");
        }
    }
+   else if (preg_match("{(?:index)\.php$}", $_SERVER["PHP_SELF"]))
+
+   {
+       if (! empty($_SESSION["id"]))
+       {
+           redirect("/sell.php");
+       }
+   }
 
 ?>

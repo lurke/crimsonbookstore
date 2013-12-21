@@ -25,14 +25,14 @@ body{
   overflow: visible;
   @include border-radius(0px);
   .brand {
-    text-shadow: 0px 2px 1px #222;
+    text-shadow: 0px 1px 1px #222;
     color: rgba(255, 255, 255, 0.75);
     &:hover {
-      text-shadow: 0px -1px 2px #222;
+      text-shadow: 0px -1px 1px #222;
     }
 
     &:active {
-      text-shadow: 0px -1px 2px #222;
+      text-shadow: 0px -1px 1px #222;
     }
   }
   .navbar-inner {
@@ -42,14 +42,14 @@ body{
     .nav {
       li{
         a{
-          text-shadow: 0px 2px 1px #222;
+          //text-shadow: 0px 1px 1px #222;
           color: rgba(255, 255, 255, 0.75);
           &:hover {
-            text-shadow: 0px -1px 2px #222;
+            //text-shadow: 0px -1px 1px #222;
           }
 
           &:active {
-            text-shadow: 1px -1px 2px #222;
+            //text-shadow: 1px -1px 1px #222;
           }
         }
         a.lin{
@@ -59,9 +59,23 @@ body{
       li.dropdown.open {
           .dropdown-toggle {
             background-color: rgba(255, 255, 255, 0);
-            text-shadow: 0px -2px 0px #222;
+            //text-shadow: 0px -1px 0px #222;
             color: rgba(255, 255, 255, 0.75);
-
+          }
+          .dropdown-menu{
+            li{
+              a:hover
+              {
+                background-color: #0081c2;
+                background-image: -moz-linear-gradient(top, #949596, #595A5A);
+                background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#949596), to(#595A5A));
+                background-image: -webkit-linear-gradient(top, #949596, #595A5A);
+                background-image: -o-linear-gradient(top, #949596, #595A5A);
+                background-image: linear-gradient(to bottom, #949596, #595A5A);
+                background-repeat: repeat-x;
+                //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+              }
+            }
           }
       }
       ul{
@@ -78,7 +92,7 @@ body{
 
 
 #mainpage {
-  background-color: rgba(0,0,0, .3);
+  //background-color: rgba(0,0,0, .3);
 }
 
 #bug-bar{
@@ -196,6 +210,77 @@ body{
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+#cover{
+line-height: 20px;
+//margin-left: 2%;
+//margin-right: 2%;
+overflow: hidden;
+width: 80%;
+left:10%;
+//background: rgba(199, 183, 160, 0.83);
+border-radius: 5px 5px 5px 5px;
+//padding-left: 30px;
+//padding-right: 30px;
+//padding-bottom: 30px;
+//padding-top: 30px;
+min-height: 430px;
+position:relative;
+//box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34);
+//-moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34);
+//-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7), inset 1px -2px 4px rgba(255, 255, 255, 0.34);
+  .covertitle{
+    color: #7d0000;
+    font-size: 60px;
+    text-align: center;
+    position:absolute;
+    top: 25%;
+    line-height: 65px;
+    width: 50%;
+    font-family: Times;
+  }
+  img{
+    position:relative;
+  }
+  #login{
+    position: absolute;
+    top: 25%;
+    left: 63%;
+    font-family: Times;
+    font-family: Times;
+    font-size: 20px;
+    color: #7d0000;
+    form{
+      padding-top: 10px;
+    }
+    button{
+      color: #7d0000;
+    }
+  }
+  #register{
+    position: absolute;
+    top: 55%;
+    left: 63%;
+    font-family: Times;
+    font-family: Times;
+    font-size: 20px;
+    color: #7d0000;
+    form{
+      padding-top: 10px;
+    }
+    button{
+      color: #7d0000;
+    }
+  }
+  #apol{
+    position: absolute;
+    top: 20%;
+    left: 63%;
+    color: #7d0000;
+    font-size: 18px;
+    font-family: Times;
   }
 }
 
@@ -338,6 +423,9 @@ body{
       }
     }
   }
+  #sellsearchsubmit{
+    color: rgba(255, 255, 255, 0.75);
+  }
   #message{
     background-color: rgba(248, 244, 240, 0.28);
     overflow:auto; 
@@ -417,7 +505,7 @@ body{
         width: 49%;
         .sellformentrance{
           margin-left: 50%;
-          margin-top: 6%;
+          margin-top: 4%;
           height: 50px;
           width: 100px;
           text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
@@ -501,7 +589,7 @@ body{
             background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
             background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
             background-color: rgb(80, 0, 0);
-            color: rgb(252, 234, 234);
+            color: rgba(255, 255, 255, 0.75);
             &:hover{
               background-color: #500000;
               text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
@@ -527,7 +615,7 @@ body{
     width: 90%;
     font-size: 20px;
     text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
-    color: rgb(252, 234, 234);
+    color: rgba(255, 255, 255, 0.75);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
     background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
     background-color: rgb(80, 0, 0);
@@ -637,7 +725,7 @@ body{
     width: 90%;
     font-size: 20px;
     text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
-    color: rgb(252, 234, 234);
+    color: rgba(255, 255, 255, 0.75);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
     background: -moz-linear-gradient(linear, left top, left bottom, from(rgb(125, 0, 0)), to(rgb(80, 0, 0)));
     background-color: rgb(80, 0, 0);
@@ -801,3 +889,10 @@ td
     text-align: center;
   }
 }
+.hero-unit{
+  background: #dbccb4;
+  min-height: 500px;
+}
+.hoverstate:hover{
+  cursor: pointer;
+  }

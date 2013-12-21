@@ -18,16 +18,24 @@
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <script src="js/buy_formjs.js"></script>
         <script src="js/sell_formjs.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
+        <style type="text/css"></style>
+        <!--<script src="booklet/jquery.easing.1.3.js" type="text/javascript"></script>
+        <script src="booklet/jquery.booklet.latest.min.js" type="text/javascript"></script>
+        <link href="booklet/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" /> -->
+
+        
 
     </head>
 
     <body> 
-        <div class="navbar">
+        <?php if (!preg_match("{(?:index|logout)\.php$}", $_SERVER["PHP_SELF"]))
+              { ?>
+         <div class="navbar">
             <div class="navbar-inner">
-                <a class="brand" href="sell.php"><img src="https://twimg0-a.akamaihd.net/profile_images/1163303038/Shield_RGB_Twitter.png" style="height:25px;width:25px;">Crimson Bookstore</a>
+                <a class="brand" href="sell.php"><img src="../Harvard-Seal-Nice.jpg" style="height:25px;width:25px;"> Crimson Bookstore</a>
                 <div class="nav-collapse"></div>
                 <ul class="nav pull-right">
                     <li class="divider-vertical"></li>
@@ -62,10 +70,13 @@
                                 {
                                     $query2 = query("SELECT * FROM listings WHERE id=?", $row['listing_id']);
                                     if(!empty($query2)) {
-                                        $bookid = $query2['book_id'];
-                                        $query3 = query("SELECT * FROM books WHERE id=?", $bookid);
-                                        if(!empty($query3))
-                                            echo('<li>' . $query3['title'] . '</li>');
+                                      foreach($query2 as $q){
+                                        $bookid = $q['book_id'];
+                                        $query3 = query("SELECT * FROM books WHERE id =?", $bookid);
+                                        if (!empty($query3))
+                                          echo('<li>' . $query3[0]['title'] . '</li>');
+                                       
+                                      }     
                                     }
                                 }
                             }
@@ -90,10 +101,12 @@
                                 {
                                     $query2 = query("SELECT * FROM listings WHERE id =?", $row['listing_id']);
                                     if(!empty($query2)) {
-                                        $bookid = $query2['book_id'];
-                                        $query3 = query("SELECT * FROM books WHERE id =?", $bookid);
-                                        if (!empty($query3))
-                                            echo('<li>' . $query3['title'] . '</li>');
+                                        foreach($query2 as $q){
+                                          $bookid = $q['book_id'];
+                                          $query3 = query("SELECT * FROM books WHERE id =?", $bookid);
+                                          if (!empty($query3))
+                                            echo('<li>' . $query3[0]['title'] . '</li>');
+                                        }
                                     }
                                 }
                             }
@@ -119,7 +132,7 @@
                                 {
                                     $query2 = query("SELECT * FROM books WHERE id = ?", $row['book_id']);
                                     if(!empty($query2))
-                                        echo('<li>' . $query2[0]['title'] . '</li>');
+                                        echo("<li>" . $query2[0]['title'] . "</li>");
                                 }
                             }
                             else
@@ -130,7 +143,7 @@
                     </li>  
                 </ul>
             </div>
-        </div>
+        </div> <?php } ?>
 
         <div id="mainpage">
                 <div id="centercontent">             

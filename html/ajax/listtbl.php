@@ -1,26 +1,26 @@
 <?php
+
     if(isset($_POST['bookid']) && !empty($_POST['bookid'])) {
 
         require '../db/connect.php';
         $query = mysql_query("SELECT * FROM listings WHERE (`book_id` = " . $_POST['bookid'] . ") ORDER BY price");            
 
         echo('<tr><td colspan = 4 id = listbook_' . $_POST['bookid'] . '><table id = "listings" style="color:#000000; padding:15px;">');
-
         if (mysql_num_rows($query) !== 0)
         {               
                 while($results = mysql_fetch_array($query))
                 {
                     $userquery = mysql_query("SELECT * FROM users WHERE (`id` = " . $results['user_id'] . ")");
                     $userresults = mysql_fetch_array($userquery);
-
                     
-                    $starquery = mysql_query("SELECT * FROM user_starred WHERE (`listing_id` = " . $results['id'] . ")");                    
-                    $starred =false;
+                    $starquery = mysql_query("SELECT * FROM user_starred WHERE (`listing_id` = " . $results['id'] . ")");
+                    
+                    $starred = False;
                     while($starresults = mysql_fetch_array($starquery))
                     {
-                        if (1 == $starresults['user_id'])
+                        if ((int)$_POST['sid'] == (int)$starresults['user_id'])
                         {
-                            $starred = true;
+                            $starred = True;
                         }
                     }
                     
@@ -30,7 +30,7 @@
                     while($cartresults = mysql_fetch_array($cartquery))
                     {
                         $users++;
-                        if (1 == $cartresults['user_id'])
+                        if ((int)$_POST['sid'] == (int)$cartresults['user_id'])
                         {
                             $carted = true;
                         }

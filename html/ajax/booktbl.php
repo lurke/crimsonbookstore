@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST['booksearch']) && !empty($_POST['booksearch'])) {
+    //if(isset($_POST['booksearch']) && !empty($_POST['booksearch'])) {
 
         require '../db/connect.php';
         $query = mysql_query("
@@ -34,4 +34,4 @@
         {        
             echo ('</tbody><h3 style = "text-align:center" >Book not found</h3></table></div>');
         }
-    }
+    //}

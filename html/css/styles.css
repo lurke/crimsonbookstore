@@ -22,12 +22,12 @@ body {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px; }
   .navbar .brand {
-    text-shadow: 0px 2px 1px #222222;
+    text-shadow: 0px 1px 1px #222222;
     color: rgba(255, 255, 255, 0.75); }
     .navbar .brand:hover {
-      text-shadow: 0px -1px 2px #222222; }
+      text-shadow: 0px -1px 1px #222222; }
     .navbar .brand:active {
-      text-shadow: 0px -1px 2px #222222; }
+      text-shadow: 0px -1px 1px #222222; }
   .navbar .navbar-inner {
     background: -webkit-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
     background: -moz-linear-gradient(top center, #7d0000, #500000);
@@ -35,18 +35,20 @@ body {
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
     .navbar .navbar-inner .nav li a {
-      text-shadow: 0px 2px 1px #222222;
       color: rgba(255, 255, 255, 0.75); }
-      .navbar .navbar-inner .nav li a:hover {
-        text-shadow: 0px -1px 2px #222222; }
-      .navbar .navbar-inner .nav li a:active {
-        text-shadow: 1px -1px 2px #222222; }
     .navbar .navbar-inner .nav li a.lin {
       color: rgba(71, 64, 64, 0.75); }
     .navbar .navbar-inner .nav li.dropdown.open .dropdown-toggle {
       background-color: rgba(255, 255, 255, 0);
-      text-shadow: 0px -2px 0px #222222;
       color: rgba(255, 255, 255, 0.75); }
+    .navbar .navbar-inner .nav li.dropdown.open .dropdown-menu li a:hover {
+      background-color: #0081c2;
+      background-image: -moz-linear-gradient(top, #949596, #595a5a);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#949596), to(#595a5a));
+      background-image: -webkit-linear-gradient(top, #949596, #595a5a);
+      background-image: -o-linear-gradient(top, #949596, #595a5a);
+      background-image: linear-gradient(to bottom, #949596, #595a5a);
+      background-repeat: repeat-x; }
     .navbar .navbar-inner .nav ul {
       background-image: url("../img/lightgrey.jpg");
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.34);
@@ -55,9 +57,6 @@ body {
       border: none; }
       .navbar .navbar-inner .nav ul li {
         margin: 5px; }
-
-#mainpage {
-  background-color: rgba(0, 0, 0, 0.3); }
 
 #bug-bar {
   font-weight: bold;
@@ -167,6 +166,57 @@ body {
       outline: none; }
     #pill-bar .active a:hover {
       text-decoration: none; }
+
+#cover {
+  line-height: 20px;
+  overflow: hidden;
+  width: 80%;
+  left: 10%;
+  border-radius: 5px 5px 5px 5px;
+  min-height: 430px;
+  position: relative; }
+  #cover .covertitle {
+    color: #7d0000;
+    font-size: 60px;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    line-height: 65px;
+    width: 50%;
+    font-family: Times; }
+  #cover img {
+    position: relative; }
+  #cover #login {
+    position: absolute;
+    top: 25%;
+    left: 63%;
+    font-family: Times;
+    font-family: Times;
+    font-size: 20px;
+    color: #7d0000; }
+    #cover #login form {
+      padding-top: 10px; }
+    #cover #login button {
+      color: #7d0000; }
+  #cover #register {
+    position: absolute;
+    top: 55%;
+    left: 63%;
+    font-family: Times;
+    font-family: Times;
+    font-size: 20px;
+    color: #7d0000; }
+    #cover #register form {
+      padding-top: 10px; }
+    #cover #register button {
+      color: #7d0000; }
+  #cover #apol {
+    position: absolute;
+    top: 20%;
+    left: 63%;
+    color: #7d0000;
+    font-size: 18px;
+    font-family: Times; }
 
 #centercontent {
   overflow: auto;
@@ -299,6 +349,8 @@ body {
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
         -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68);
         -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(125, 0, 0, 0.68); }
+  #pill-content #sellsearchsubmit {
+    color: rgba(255, 255, 255, 0.75); }
   #pill-content #message {
     background-color: rgba(248, 244, 240, 0.28);
     overflow: auto;
@@ -361,7 +413,7 @@ body {
     width: 49%; }
     #pill-content #big .sellform .sellformentrance {
       margin-left: 50%;
-      margin-top: 6%;
+      margin-top: 4%;
       height: 50px;
       width: 100px;
       text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
@@ -434,7 +486,7 @@ body {
         background: -webkit-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
         background: -moz-linear-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
         background-color: #500000;
-        color: #fceaea; }
+        color: rgba(255, 255, 255, 0.75); }
         #pill-content #big .sellform .actualform button:hover {
           background-color: #500000;
           text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
@@ -453,7 +505,7 @@ body {
     width: 90%;
     font-size: 20px;
     text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
-    color: #fceaea;
+    color: rgba(255, 255, 255, 0.75);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7d0000), to(#500000));
     background: -moz-linear-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
     background-color: #500000; }
@@ -551,7 +603,7 @@ body {
     width: 90%;
     font-size: 20px;
     text-shadow: rgba(0, 0, 0, 0.74902) 0px 1px 1px;
-    color: #fceaea;
+    color: rgba(255, 255, 255, 0.75);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7d0000), to(#500000));
     background: -moz-linear-gradient(linear, left top, left bottom, from(#7d0000), to(#500000));
     background-color: #500000; }
@@ -686,3 +738,10 @@ td {
   width: 100px; }
   td td {
     text-align: center; }
+
+.hero-unit {
+  background: #dbccb4;
+  min-height: 500px; }
+
+.hoverstate:hover {
+  cursor: pointer; }
